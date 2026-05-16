@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/24.0.1" fx:controller="controllers.MainController">
+   <children>
+      <Label layoutX="-4.0" layoutY="-1.0" prefHeight="23.0" prefWidth="600.0" text="Student Course Enrollment System">
+         <padding>
+            <Insets left="190.0" />
+         </padding>
+      </Label>
+      <GridPane layoutX="19.0" layoutY="49.0" prefHeight="213.0" prefWidth="269.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.33334350585938" minWidth="10.0" prefWidth="100.33334350585938" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.66665649414062" minWidth="10.0" prefWidth="149.66665649414062" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.666656494140625" minHeight="10.0" prefHeight="50.666656494140625" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="78.66666666666666" minHeight="0.0" prefHeight="30.666666666666664" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="47.999999999999986" minHeight="0.0" prefHeight="47.999999999999986" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Student ID" />
+            <Label text="Course ID" GridPane.rowIndex="1" />
+            <Label text="Enrollment Date" GridPane.rowIndex="2" />
+            <TextField fx:id="txtStudentId" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCourseId" prefHeight="25.0" prefWidth="119.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="pickerDate" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <HBox layoutX="5.0" layoutY="283.0" prefHeight="83.0" prefWidth="309.0">
+         <children>
+            <Button fx:id="btnadd" mnemonicParsing="false" onAction="#handleAdd" text="Add">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btnUpdate" fx:id="btnupdate" mnemonicParsing="false" onAction="#handleUpdate" text="Update">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="btnDelete" fx:id="btndelete" mnemonicParsing="false" onAction="#handleDelete" text="Delete">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="tableEnrollments" layoutX="339.0" layoutY="38.0" prefHeight="329.0" prefWidth="229.0">
+        <columns>
+          <TableColumn fx:id="colStudentId" prefWidth="75.0" text="Student ID" />
+          <TableColumn fx:id="colCourseId" prefWidth="75.0" text="Course ID" />
+            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
